@@ -11,20 +11,59 @@
     <!--input spaces-->
     <div class = "input_sheet">
         <div class = "single_person">
-            <span><p>Name:</p> <input type="text" id = "first_name" ></span>
-            <span><p>Email:</p> <input type="text" id = "email" ></span>
+           <form id = "memberForm">
+            <p>Name:</p> <input type="text" id = "first_name" >
+            <p>Email:</p> <input type="text" id = "email" >
+           </form>
+           <br>
         </div>
 
     </div>
     <br><br><br><br>
     <button type="button" onclick="view()">submit</button> 
-    <button type="button">organize</button> 
+    <button type="button" onclick= "resetForm()" >Add New Member</button> 
 
     <p id = "displayName"></p>
     <p id = "displayEmail"></p>
+    <p id = "displayArray"></p>
 
 
-    <script src="Scripts/database.js"></script> 
+
+
+    <script>
+
+        var memberData = {
+            name: "",
+            email: ""
+        };
+
+        var memberArray = [];
+
+        function resetForm(){
+            document.getElementById("memberForm").reset();    
+        }
+
+        function view() {
+          var name = document.getElementById("first_name").value;
+          var email = document.getElementById("email").value; 
+          memberData.name = name;
+          memberData.email = email;
+          memberArray[0] = memberData;
+
+            for (var i = 0; i < memberArray.length; i++){
+                document.getElementById("displayName").innerHTML = memberArray[i].name;
+                document.getElementById("displayEmail").innerHTML = memberArray[i].email;
+            }
+
+
+
+            
+
+
+
+        }
+
+    </script>
 
 
 </body>
