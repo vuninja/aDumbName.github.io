@@ -1,0 +1,9 @@
+div#display_window
+{
+    border: solid black 5px;
+}
+
+button
+{
+    margin-top: 2%;
+}
