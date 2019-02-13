@@ -28,43 +28,5 @@
     <p id = "displayArray"></p>
 
 
-
-
-    <script>
-
-        var memberData = {
-            name: "",
-            email: ""
-        };
-
-        var memberArray = [];
-
-        function resetForm(){
-            document.getElementById("memberForm").reset();    
-        }
-
-        function view() {
-          var name = document.getElementById("first_name").value;
-          var email = document.getElementById("email").value; 
-          memberData.name = name;
-          memberData.email = email;
-          memberArray[0] = memberData;
-
-            for (var i = 0; i < memberArray.length; i++){
-                document.getElementById("displayName").innerHTML = memberArray[i].name;
-                document.getElementById("displayEmail").innerHTML = memberArray[i].email;
-            }
-
-
-
-            
-
-
-
-        }
-
-    </script>
-
-
 </body>
 </html>

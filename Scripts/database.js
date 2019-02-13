@@ -1,11 +1,34 @@
 var datas = ["test1","test2","test3"];
 
+//===========================================================================
+//Input Page
+//===========================================================================
+var memberData = {
+name: "",
+email: ""
+};
+
+var memberArray = [];
+
+function resetForm(){
+    document.getElementById("memberForm").reset();    
+}
+
 function view() {
-    var x = document.getElementById("first_name").value;
-    document.getElementById("displayName").innerHTML = x;
-    var y = document.getElementById("email").value;
-    document.getElementById("displayEmail").innerHTML = y;
-  }
+  var name = document.getElementById("first_name").value;
+  var email = document.getElementById("email").value; 
+  memberData.name = name;
+  memberData.email = email;
+  memberArray[0] = memberData;
+
+    for (var i = 0; i < memberArray.length; i++){
+        document.getElementById("displayName").innerHTML = memberArray[i].name;
+        document.getElementById("displayEmail").innerHTML = memberArray[i].email;
+    }
+}
+//===========================================================================
+//Output Page
+//===========================================================================
 
 function display()
 {
