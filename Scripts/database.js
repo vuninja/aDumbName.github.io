@@ -10,6 +10,14 @@ email: ""
 
 var memberArray = [];
 
+function inputPageOnLoad()
+{
+    if(sessionStorage.getItem("datas") != null)
+    {
+        datas = JSON.parse(sessionStorage.getItem("datas"));
+    }
+}
+
 function resetForm(){
     document.getElementById("memberForm").reset();    
 }
@@ -26,9 +34,8 @@ function submit() {
         document.getElementById("displayEmail").innerHTML = memberArray[i].email;
     }
     datas.push(memberData);
-    window.alert(datas);
-    window.alert(localStorage.getItem("datas"));
-    localStorage.setItem("datas","datas");
+    sessionStorage.setItem("datas",JSON.stringify(datas));
+    //window.alert(datas);
 }
 //===========================================================================
 //Output Page
@@ -36,8 +43,7 @@ function submit() {
 
 function display()
 {
-    localStorage.getItem("datas");
-    window.alert(datas);
+    datas = JSON.parse(sessionStorage.getItem("datas"));
     for(var x = 0; x < datas.length; ++x)
     {
         var field = document.createElement("P"); 
@@ -47,4 +53,5 @@ function display()
         document.getElementById("display_window").appendChild(field);
         //document.getElementById("display_window").appendChild(br);
     }
+
 }
