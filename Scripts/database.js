@@ -26,7 +26,7 @@ function submit() {
         document.getElementById("displayEmail").innerHTML = memberArray[i].email;
     }
     datas.push(memberData);
-    localStorage.setItem("datas",datas);
+    localStorage.setItem("datas","datas");
     window.alert(datas);
     window.alert(localStorage.getItem("datas"));
 }
