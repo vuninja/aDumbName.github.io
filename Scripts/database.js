@@ -19,21 +19,28 @@ function inputPageOnLoad()
 }
 
 function resetForm(){
-    document.getElementById("memberForm").reset();    
+    document.getElementById("memberForm").reset();
+    memberData = {
+        name: "",
+        email: ""
+        };    
 }
 
 function submit() {
   var name = document.getElementById("first_name").value;
   var email = document.getElementById("email").value; 
+  memberData = {
+    name: "",
+    email: ""
+    };
   memberData.name = name;
   memberData.email = email;
-  memberArray[0] = memberData;
-
-    for (var i = 0; i < memberArray.length; i++){
-        document.getElementById("displayName").innerHTML = memberArray[i].name;
-        document.getElementById("displayEmail").innerHTML = memberArray[i].email;
-    }
-    datas.push(memberData);
+  datas.push(memberData);
+    //for (var i = 0; i < memberArray.length; i++){
+        document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
+        document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
+    //}
+    
     sessionStorage.setItem("datas",JSON.stringify(datas));
     //window.alert(datas);
 }
