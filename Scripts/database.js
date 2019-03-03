@@ -69,3 +69,47 @@ function resetButton()
     sessionStorage.setItem("datas",JSON.stringify(datas));
     location.reload();
 }
+
+function outputToCSV()
+{
+    if(datas === null || datas.length == 0 || datas === undefined)
+    {
+        window.alert("You don't have any data. Don't tell me you are the only one in your club. :<");
+        return;
+    }
+    var csv = objectToCSVString(datas);
+    if(csv != null)
+    {
+        csv = "data:text/csv;charset=utf-8," + csv;
+        data = encodeURI(csv);
+        //download file
+        downLink = document.getElementById("dummy_download");
+        downLink.setAttribute('href', data);
+        downLink.setAttribute('download', 'export.csv');
+        downLink.click();
+    }
+}
+
+function objectToCSVString(data)
+{
+    if(data == null || data == [])
+    {
+        return null;
+    }
+    var csv = "";
+    //add title
+    keys = Object.keys(data[0]);
+    csv += keys.join(",");
+    csv += "\n";
+    for(var x = 0; x <datas.length ; ++x)
+    {
+        csv += Object.values(data[x]).join(",");
+        csv += "\n";
+    }
+    return csv;
+}
+
+function inputFromCSV()
+{
+
+}
