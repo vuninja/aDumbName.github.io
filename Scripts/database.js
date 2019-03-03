@@ -111,5 +111,42 @@ function objectToCSVString(data)
 
 function inputFromCSV()
 {
+    var fileInput = document.getElementById("csv_inputed").files[0];
+    if(fileInput === undefined || fileInput.name.split(".")[1] != "csv")
+    {
+        window.alert("Wait, stop right there. Don't give me a file whose extension is not .csv")
+        return;
+    }
+    var reader = new FileReader();
+    reader.readAsBinaryString(fileInput);
+    //wait until finish reading
+    reader.onload = function () {
+        var csv = reader.result;
+        datas = CSVStringToObject(csv);
+        //save datas and reload page
+        sessionStorage.setItem("datas",JSON.stringify(datas));
+        location.reload();
+    };
+    
+}
 
+function CSVStringToObject(csv)
+{
+    var lines = csv.split("\n");
+    var keys = lines[0].split(",");
+    var result = [];
+    //go thorugh all lines
+    for(var x = 1; x < lines.length - 1; ++x)
+    {
+        //construct the object
+        var obj = {};
+        var values = lines[x].split(",");
+        for(var keyIndex = 0; keyIndex < keys.length; ++ keyIndex)
+        {
+            obj[keys[keyIndex]] = values[keyIndex];
+        }
+        result.push(obj);
+        
+    }
+    return result;
 }
