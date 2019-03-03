@@ -27,18 +27,18 @@ function resetForm(){
 }
 
 function submit() {
-  var name = document.getElementById("first_name").value;
-  var email = document.getElementById("email").value; 
-  memberData = {
-    name: "",
-    email: ""
-    };
-  memberData.name = name;
-  memberData.email = email;
-  datas.push(memberData);
+    var name = document.getElementById("first_name").value;
+    var email = document.getElementById("email").value; 
+    memberData = {
+        name: "",
+        email: ""
+        };
+    memberData.name = name;
+    memberData.email = email;
+    datas.push(memberData);
     //for (var i = 0; i < memberArray.length; i++){
-        document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
-        document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
+    document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
+    document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
     //}
     
     sessionStorage.setItem("datas",JSON.stringify(datas));
@@ -61,4 +61,11 @@ function display()
         //document.getElementById("display_window").appendChild(br);
     }
 
+}
+
+function resetButton()
+{
+    datas = [];
+    sessionStorage.setItem("datas",JSON.stringify(datas));
+    location.reload();
 }
