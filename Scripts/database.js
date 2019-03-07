@@ -51,10 +51,18 @@ function submit() {
 function display()
 {
     datas = JSON.parse(sessionStorage.getItem("datas"));
+    var keys = Object.keys(datas[0]);
     for(var x = 0; x < datas.length; ++x)
     {
-        var field = document.createElement("P"); 
-        var text = document.createTextNode("name: "+ datas[x].name + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0 email: " +datas[x].email);
+        var content = "";
+        //construct the string
+        for(var y = 0; y < keys.length; ++y)
+        {
+            content += keys[y] + ": " + datas[x][keys[y]] + "\n";
+        }
+        content += "\n";
+        var field = document.createElement("PRE"); 
+        var text = document.createTextNode(content)//"name: "+ datas[x].name + "\nemail: " +datas[x].email +"\n\n");
         field.appendChild(text);
         //var br = document.createElement("BR"); 
         document.getElementById("display_window").appendChild(field);
