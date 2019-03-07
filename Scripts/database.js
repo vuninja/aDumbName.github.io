@@ -177,7 +177,6 @@ function outputAsEmailString()
     }
     //print string to window
     document.getElementById("displayEmailString").textContent = result;
-    window.alert(1);
 }
 
 function goHome(){
