@@ -46,7 +46,7 @@ function submit() {
     //}
     
     sessionStorage.setItem("datas",JSON.stringify(datas));
-    //window.alert(datas);
+    resetForm();
 }
 //===========================================================================
 //Output Page
@@ -55,10 +55,18 @@ function submit() {
 function display()
 {
     datas = JSON.parse(sessionStorage.getItem("datas"));
+    var keys = Object.keys(datas[0]);
     for(var x = 0; x < datas.length; ++x)
     {
-        var field = document.createElement("P"); 
-        var text = document.createTextNode(datas[x].name + "  " +datas[x].email);
+        var content = "";
+        //construct the string
+        for(var y = 0; y < keys.length; ++y)
+        {
+            content += keys[y] + ": " + datas[x][keys[y]] + "\n";
+        }
+        content += "\n";
+        var field = document.createElement("PRE"); 
+        var text = document.createTextNode(content)//"name: "+ datas[x].name + "\nemail: " +datas[x].email +"\n\n");
         field.appendChild(text);
         //var br = document.createElement("BR"); 
         document.getElementById("display_window").appendChild(field);
@@ -137,20 +145,20 @@ function inputFromCSV()
 function CSVStringToObject(csv)
 {
     var lines = csv.split("\n");
-    var keys = lines[0].split(",");
+    var keys = lines[0].trim().split(",");
     var result = [];
     //go thorugh all lines
     for(var x = 1; x < lines.length - 1; ++x)
     {
         //construct the object
         var obj = {};
-        var values = lines[x].split(",");
+        var values = lines[x].trim().split(",");
         for(var keyIndex = 0; keyIndex < keys.length; ++ keyIndex)
         {
             obj[keys[keyIndex]] = values[keyIndex];
         }
         result.push(obj);
-        
     }
+    
     return result;
 }
