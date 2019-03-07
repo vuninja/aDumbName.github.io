@@ -1,20 +1,3 @@
-/* div#display_window
-{
-    border: solid black 2px;
-}
-
-h2{
-    padding: 0% 0% 0% 3%;
-}
-
-p{
-    padding: 0% 0% 0% 4%;
-}
-
-button
-{
-    margin-top: 2%;
-} */
 
 body{
     text-align: center;
@@ -29,14 +12,12 @@ body{
 }
 
 button{
-    width: 150px;
     background-color: white;
     color: black;
     border: 3px solid #555555;
     border-radius: 5px;
     padding: 15px 30px;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s;
@@ -47,4 +28,29 @@ button{
 button:hover {
     background-color: #555555;
     color: white;
+}
+
+button:not(#longButton):not(#homeButton){
+    width: 180px;
+}
+
+button#longButton{
+    width: 400px;
+}
+
+button#homeButton{
+    position: absolute;
+    left:0;
+    padding: 15px;
+}
+
+.homeButtonAndTitle{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+    padding: 0;
 }

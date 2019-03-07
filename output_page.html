@@ -8,19 +8,26 @@
 
 
 <body onload="display()">
-    <h1>Output Overview</h1>
-    <button type="button" onclick= "goHome()" >Go Home</button> <br>
+    <div class = "homeButtonAndTitle"><button type="button"  id = "homeButton" onclick= "goHome()" >Home</button> <br>
+    <h1>Output Overview</h1></div>
     <!--Field to display stored reason-->
     <div id = "display_window">
         <h2>Information Stored:</h2>
     </div>
 
-    <button type="button" onclick="outputToCSV()">output CSV file</button> 
-    <button type="button" onclick="inputFromCSV()">input from csv file</button> 
+    <button type="button" onclick="outputToCSV()">Ouput to CSV</button> 
+    <button type="button" onclick="resetButton()">Reset Data</button> 
+    <br><br>
+
+    <p>Please select a CSV file to upload by clicking "Choose File". Then click "Load CSV" to load the data to the page.</p> 
+    
     <input id="csv_inputed" type="file" accept=".csv">
     <a id=dummy_download>
-    <button type="button" onclick="resetButton()">reset data</button> 
-    <button type="button" onclick="outputAsEmailString()">Output Email to Multiple Recipient String</button> 
+
+    <button type="button" onclick="inputFromCSV()">Load CSV</button> 
+
+    <br><br><br>
+    <button type="button" id = "longButton" onclick="outputAsEmailString()">Output Email Addresses to Recipient String</button> 
     <p id = "displayEmailString"></p>
 
 
