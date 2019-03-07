@@ -42,7 +42,7 @@ function submit() {
     //}
     
     sessionStorage.setItem("datas",JSON.stringify(datas));
-    //window.alert(datas);
+    resetForm();
 }
 //===========================================================================
 //Output Page
