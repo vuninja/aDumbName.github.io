@@ -33,16 +33,24 @@ function viewData(){
 function submit() {
     var name = document.getElementById("first_name").value;
     var email = document.getElementById("email").value; 
+    var phone = document.getElementById("phone").value;
+    var major = document.getElementById("major").value;
     memberData = {
         name: "",
-        email: ""
+        email: "",
+        phone: "",
+        major:""
         };
     memberData.name = name;
     memberData.email = email;
+    memberData.phone = phone;
+    memberData.major = major;
     datas.push(memberData);
     //for (var i = 0; i < memberArray.length; i++){
     document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
     document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
+    document.getElementById("displayPhone").innerHTML = datas[datas.length - 1].phone;
+    document.getElementById("displayMajor").innerHTML = datas[datas.length - 1].major;
     //}
     
     sessionStorage.setItem("datas",JSON.stringify(datas));
