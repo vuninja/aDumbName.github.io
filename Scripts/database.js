@@ -20,10 +20,6 @@ function inputPageOnLoad()
 
 function resetForm(){
     document.getElementById("memberForm").reset();
-    memberData = {
-        name: "",
-        email: ""
-        };    
 }
 
 function viewData(){
@@ -80,7 +76,6 @@ function display()
         document.getElementById("display_window").appendChild(field);
         //document.getElementById("display_window").appendChild(br);
     }
-
 }
 
 function resetButton()
@@ -169,4 +164,17 @@ function CSVStringToObject(csv)
     }
     
     return result;
+}
+
+function outputAsEmailString()
+{
+    var result = "";
+    for(var x = 0; x < datas.length; ++x)
+    {
+        var temp = datas[x].email.trim();
+        if(temp.length > 0)
+            result += (temp + ",")
+    }
+    //print string to window
+    
 }
