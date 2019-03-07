@@ -9,19 +9,21 @@
 
 <body onload="display()">
     <h1>Output Overview</h1>
-    <a href = "index.html">input page</a>
+    <button type="button" onclick= "goHome()" >Go Home</button> <br>
     <!--Field to display stored reason-->
     <div id = "display_window">
-        <h2>Information Stored:</h2><br/>
+        <h2>Information Stored:</h2>
     </div>
 
     <button type="button" onclick="outputToCSV()">output CSV file</button> 
-    <br>
     <button type="button" onclick="inputFromCSV()">input from csv file</button> 
     <input id="csv_inputed" type="file" accept=".csv">
     <a id=dummy_download>
-    <br><br><br>
     <button type="button" onclick="resetButton()">reset data</button> 
+    <button type="button" onclick="outputAsEmailString()">Output Email to Multiple Recipient String</button> 
+    <p id = "displayEmailString"></p>
+
+
 
 </body>
 
