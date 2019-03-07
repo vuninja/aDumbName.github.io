@@ -26,6 +26,10 @@ function resetForm(){
         };    
 }
 
+function viewData(){
+    window.location.href = "output_page.html";
+}
+
 function submit() {
     var name = document.getElementById("first_name").value;
     var email = document.getElementById("email").value; 
