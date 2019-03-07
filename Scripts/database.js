@@ -176,5 +176,10 @@ function outputAsEmailString()
             result += (temp + ",")
     }
     //print string to window
-    
+    document.getElementById("displayEmailString").textContent = result;
+    window.alert(1);
+}
+
+function goHome(){
+    window.location.href = "index.html";
 }
