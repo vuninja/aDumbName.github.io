@@ -52,6 +52,37 @@ function submit() {
     sessionStorage.setItem("datas",JSON.stringify(datas));
     resetForm();
 }
+
+function changeBG(value)
+{
+    var bg;
+    switch(value)
+    {
+
+        case '1':
+        bg = "url('bball.png')";        
+        break;
+        case '2':
+            bg = "url('soccer.png')";
+        break;
+        case '3':
+            bg = "url('football.png')";
+        break;
+        case '4':
+            bg = "url('water.png')";
+        break;
+        case '5':
+            bg = "url('run.png')";
+        break;
+    }
+
+    document.body.style.backgroundImage = bg;
+}
+
+
+
+
+
 //===========================================================================
 //Output Page
 //===========================================================================

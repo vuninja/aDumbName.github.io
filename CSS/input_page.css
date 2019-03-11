@@ -1,6 +1,7 @@
 
 
 body{
+    background-size: cover;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -43,7 +44,7 @@ button:hover {
 input[type=text] {
     width: 13%;
     box-sizing: border-box;
-    border: 3px solid #ccc;
+    border: 3px solid black;
     border-radius: 5px;
     font-size: 16px;
     background-color: white;
@@ -57,3 +58,8 @@ input[type=text] {
   }
 
 
+  .selectBG{
+    position: relative;
+    left:0;
+    padding: 15px;
+  }

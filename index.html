@@ -7,8 +7,21 @@
 </head>
 
 <body onload="inputPageOnLoad()">
-    <br>
-    <h1>Anteater Club Organizer</h1> 
+
+    <div class="selectBG">
+     <p>Please select your preffered background image</p>
+        <select onchange="changeBG(this.value)">
+          <option value="0" >Select prefered background:</option>
+          <option value="1" >Basketball</option>
+          <option value="2" >Soccer</option>
+          <option value="3" >Football</option>
+          <option value="4" >Water</option>
+          <option value="5" >Track & Field | Running</option>
+        </select>
+      </div>
+
+
+    <h1>Anteater Club Organizer</h1> <br>
     <!--input spaces-->
         <div class = "inputSheet"> <br>
            <form id = "memberForm" autocomplete="off">
