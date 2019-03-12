@@ -16,6 +16,7 @@ function inputPageOnLoad()
     {
         datas = JSON.parse(sessionStorage.getItem("datas"));
     }
+    window.alert("Current situation:\n1. import csv from Mac will not read the last row \n2. havent tested on all machines/web browers");
 }
 
 function resetForm(){
