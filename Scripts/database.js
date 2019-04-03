@@ -16,7 +16,7 @@ function inputPageOnLoad()
     {
         datas = JSON.parse(sessionStorage.getItem("datas"));
     }
-    window.alert("Current situation:\n1. import csv from Mac will not read the last row \n2. havent tested on all machines/web browers");
+    // window.alert("Current situation:\n1. import csv from Mac will not read the last row \n2. havent tested on all machines/web browers");
 }
 
 function resetForm(){
@@ -32,17 +32,26 @@ function submit() {
     var email = document.getElementById("email").value; 
     var phone = document.getElementById("phone").value;
     var major = document.getElementById("major").value;
+    var first = document.getElementById("first_event").checked;
+    console.log(first);
     memberData = {
         name: "",
         email: "",
         phone: "",
-        major:""
+        major:"",
+        first_event: ""
         };
 	if(name !== "" && email !== ""){
 		memberData.name = name;
 		memberData.email = email;
 		memberData.phone = phone;
-		memberData.major = major;
+        memberData.major = major;
+        if(first){
+            memberData.first_event = "Yes";
+        }else{
+            memberData.first_event = "No";
+        }
+        console.log(memberData.first_event);
 		datas.push(memberData);
 		document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
 		document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;

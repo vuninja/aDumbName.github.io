@@ -2,20 +2,35 @@
 <html lang="en" id="anteaterClubOrganizer">
 <head>
 	<meta charset="utf-8">
-    <title>Anteater Club Organizer</title>
+    <title>Alpha Phi Omega</title>
 
-    <link rel = "stylesheet" href = "CSS/input_page.css">
+	<link rel = "stylesheet" href = "CSS/input_page.css">
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lobster');
+	</style>
 </head>
 
 <body onload="inputPageOnLoad()">
 	
-	<div id="topBar">
+	<!-- <div id="topBar">
 		<div class="blueBar">
 			<a href="index.html">
-				<img class="logo" src="Logo.png" alt="logo"/>
+				
 			</a>
 		</div>
-	</div>
+	</div> -->
+
+	<img class="logo" src="Alpha_Phi_Omega.png" alt="logo"/>
+	<p id="welcome">
+		Welcome to 
+		<span style="color: blue;">Alpha </span>
+		<span style="color: white;">Phi </span>
+		<span style="color: rgb(255, 230, 0);">Omega </span>
+		Rush
+	</p>
+
+	<hr style="width: 85%; border: 2px solid white; border-radius: 2px;">
 	
     <h1 class="direct">Enter your information</h1>
     <!--input spaces-->
@@ -25,18 +40,18 @@
             <input class="inputBox" type="text" id = "email" placeholder="Email"/><sup style="color:red;">*</sup><br>
             <input class="inputBox" type="text" id = "phone" placeholder="Phone"/><br>
             <input class="inputBox" type="text" id = "major" placeholder="Major"/><br>
-			<sup style="color:red;">*</sup><sup>-required</sup>
+			<sup style="color:red;">*</sup><sup style="color:white;">-required</sup><br>
+			<input type="checkbox" id="first_event" value="Yes"/><span style="color:white;">Is this your first rush event? </span><br>
            </form>
         </div>
 
     <button type="button" onclick="submit()">Submit</button> <br>
     <button type="button" onclick= "viewData()" >View Data</button> <br>
 
-    <p id = "displayName"></p>
-    <p id = "displayEmail"></p>
-    <p id = "displayPhone"></p>
-    <p id = "displayMajor"></p>
-    <p id = "displayArray"></p>
+    <p class="displayInput" id = "displayName"></p>
+    <p class="displayInput" id = "displayEmail"></p>
+    <p class="displayInput" id = "displayPhone"></p>
+    <p class="displayInput" id = "displayMajor"></p>
 	
 	<button class="collapsible" onclick="collapse()">More Tools</button>
 	<div id="moreTools">
