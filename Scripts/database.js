@@ -16,7 +16,7 @@ function inputPageOnLoad()
     {
         datas = JSON.parse(sessionStorage.getItem("datas"));
     }
-    window.alert("Current situation:\n1. import csv from Mac will not read the last row \n2. havent tested on all machines/web browers");
+    // window.alert("Current situation:\n1. import csv from Mac will not read the last row \n2. havent tested on all machines/web browers");
 }
 
 function resetForm(){
@@ -32,23 +32,34 @@ function submit() {
     var email = document.getElementById("email").value; 
     var phone = document.getElementById("phone").value;
     var major = document.getElementById("major").value;
+    var first = document.getElementById("first_event").checked;
+    console.log(first);
     memberData = {
         name: "",
         email: "",
         phone: "",
-        major:""
+        major:"",
+        first_event: ""
         };
-    memberData.name = name;
-    memberData.email = email;
-    memberData.phone = phone;
-    memberData.major = major;
-    datas.push(memberData);
-    //for (var i = 0; i < memberArray.length; i++){
-    document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
-    document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
-    document.getElementById("displayPhone").innerHTML = datas[datas.length - 1].phone;
-    document.getElementById("displayMajor").innerHTML = datas[datas.length - 1].major;
-    //}
+	if(name !== "" && email !== ""){
+		memberData.name = name;
+		memberData.email = email;
+		memberData.phone = phone;
+        memberData.major = major;
+        if(first){
+            memberData.first_event = "Yes";
+        }else{
+            memberData.first_event = "No";
+        }
+        console.log(memberData.first_event);
+		datas.push(memberData);
+		document.getElementById("displayName").innerHTML = datas[datas.length - 1].name;
+		document.getElementById("displayEmail").innerHTML = datas[datas.length - 1].email;
+		document.getElementById("displayPhone").innerHTML = datas[datas.length - 1].phone;
+		document.getElementById("displayMajor").innerHTML = datas[datas.length - 1].major;
+    }else{
+		window.alert("Enter name and email.")
+	}
     
     sessionStorage.setItem("datas",JSON.stringify(datas));
     resetForm();
@@ -60,24 +71,46 @@ function changeBG(value)
     switch(value)
     {
 
-        case '1':
-        bg = "url('bball.png')";        
+        case 'bball':
+			bg = "url('bball.png')";        
         break;
-        case '2':
+        case 'soccer':
             bg = "url('soccer.png')";
         break;
-        case '3':
+        case 'football':
             bg = "url('football.png')";
         break;
-        case '4':
+        case 'water':
             bg = "url('water.png')";
         break;
-        case '5':
+        case 'track':
             bg = "url('run.png')";
         break;
+		case 'none':
+			bg = null;
     }
 
     document.body.style.backgroundImage = bg;
+}
+
+function collapse()
+{
+	var button_text = document.getElementsByClassName("collapsible");
+	var i;
+	for (i = 0; i < button_text.length; i++){
+		if(button_text[i].innerHTML==="Show Less"){
+			button_text[i].innerHTML = "More Tools";
+		}else{
+			button_text[i].innerHTML = "Show Less";
+		}
+	}
+
+	var contents = document.getElementById("moreTools");
+	if(contents.style.display === "block") {
+		contents.style.display = "none";
+	}else{
+		contents.style.display = "block";
+	}
 }
 
 

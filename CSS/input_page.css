@@ -1,26 +1,52 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(0, 81, 128);
+}
 
 body {
     background-size: cover;
-	background-color: #F2F3F5;
+    /* background-color: rgb(132, 165, 235); */
+    background-color: black;
     text-align: center;
     font-family: 'Helvetica', Geneva, Verdana, sans-serif;
 }
 
 .direct {
-	padding-top: 60px;
     text-align: center;
-    margin: 0;
+    font-size: 2vw;
+    margin: 25px 0px 0px;
 }
 
 h1 {
-	color: #555;
+	color: rgb(224, 224, 224);
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     line-height: 1.2;
     margin: 0 0 20px
 }
 
+#welcome {
+    margin-top: 0%;
+    font-family: 'Lobster', cursive;
+    text-align: left;
+    font-size: 4vw;
+    display: inline;
+    vertical-align: top;
+    color: white;
+}
+
+#welcome span {
+    vertical-align: top;
+    color: blue;
+}
 .inputSheet {
 	position: relative;
     max-width: 90%;
@@ -31,9 +57,9 @@ h1 {
 
 button {
     width: 150px;
-    background-color: #AAC9FF;
+    background-color: rgb(76, 101, 245);
     color: black;
-    border: 3px solid #AAC9FF;
+    border: 3px solid rgb(76, 101, 245);
     border-radius: 5px;
     padding: 15px 30px;
     text-decoration: none;
@@ -46,33 +72,32 @@ button {
 }
 
 button:hover {
-    background-color: #77A7FF;
-	border: 3px solid #77A7FF;
+    background-color: rgb(13, 64, 160);
+	border: 3px solid rgb(13, 64, 160);
 	border-radius: 5px;
     color: white;
 }
 
 input[type=text] {
-    width: 13%;
+    width: 25%;
     box-sizing: border-box;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 16px;
-    background-color: white;
+    background-color: rgb(219, 219, 219);
     padding: 12px 20px 12px 5px;
 	transition-duration: 0.6s;
   }
 
   input[type=text]:focus {
-    width: 70%;
+    width: 30%;
+    background-color: white;
   }
   
   .logo {
-	  width:43px;
-	  height:43px;
-	  position:absolute;
-	  top:5px;
-	  left:5px;
+	  width:70px;
+	  height:70px;
+      display: inline;
   }
 
   .blueBar {
@@ -86,6 +111,10 @@ input[type=text] {
   
   .inputBox {
 	  margin: 5px;
+  }
+
+  .displayInput {
+      color: white;
   }
   
   #moreTools {
